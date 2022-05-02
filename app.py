@@ -10,6 +10,7 @@ import os
 import os.path
 import csv
 from itertools import zip_longest
+from datetime import date
 
 app = Flask(__name__)
 
@@ -50,7 +51,7 @@ def get_historical_stock_price(stock):
     startDate = datetime.datetime(2010, 1, 4)
     #date = datetime.datetime.now().date()
     #endDate = pd.to_datetime(date)
-    endDate = datetime.datetime(2017, 11, 28)
+    endDate = date.now()
     stockData = yahoo_stocks(stock, startDate, endDate)
     return stockData
 
